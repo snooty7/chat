@@ -1,0 +1,36 @@
+{
+  "expo": {
+	"name": "Chat",
+    "sdkVersion": "23.0.0",
+	"slug": "chat",
+    "loading": {
+      "hideExponentText": false
+    },
+	"icon": "./img/chat-icon.png",
+    "splash": {
+      "image": "./img/wait.png",
+      "backgroundColor": "#000000",
+      "resizeMode": "contain"
+    },
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "packagerOpts": {
+      "assetExts": [
+        "ttf"
+      ]
+    },
+    "privacy": "unlisted",
+    "androidStatusBarColor": "#bfcd31",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#bfcd31"
+    },
+	"ios": {
+		"supportsTablet": true,
+		"bundleIdentifier": "com.coool.chat"
+	},
+  	"android": {
+      "package": "com.example.myapp"
+  	}
+  }
+}
