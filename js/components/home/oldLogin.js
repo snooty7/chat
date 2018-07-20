@@ -60,6 +60,28 @@ class Login extends React.Component {
             this.props.navigation.navigate("MyAccount");
 
     };
+
+    _handlePressPass = () => {
+
+        this.setState({
+            modalVisible: true,
+            renderPass: true
+        })
+    }
+    _handlePressReg = () => {
+        this.setState({
+            modalVisible: true,
+            renderPass: false
+        })
+    };
+
+    getModalContent = () => {
+        if(!this.state.renderPass){
+            return <Registration/>
+        }
+        return <ForgotPass/>
+    }
+
     render() {
         return (
             <View>
@@ -71,6 +93,22 @@ class Login extends React.Component {
                         <Input secureTextEntry={true} placeholder={I18n.t('pass',{locale: 'bg'})} value={this.state.pass} onChangeText = {(newValue) => this.setState({pass:newValue})}/>
                     </Item>
                 </Form>
+
+                <Grid>
+                    <Row>
+                        <Col>
+                            <Button onPress={this._handlePressPass}>
+                                <Text style={styles.forgotPass}> Забравена парола </Text>
+                            </Button>
+                        </Col>
+                        <Col>
+                            <Button onPress={this._handlePressReg}>
+                                <Text style={styles.registration}>   Регистрация </Text>
+                            </Button>
+                        </Col>
+                    </Row>
+
+                </Grid>
                 <Button block style={styles.loginButton} onPress={() =>
 
                     //this.login()
@@ -78,6 +116,16 @@ class Login extends React.Component {
                 }>
                     <Text>{I18n.t('login',{locale: 'bg'}).toUpperCase()}</Text>
                 </Button>
+                <Modal animationType="slide"
+                       visible={this.state.modalVisible}
+                       onRequestClose={()=>{
+                           this.setState({
+                               modalVisible:false
+                           })
+                       }}
+                >
+                {this.getModalContent()}
+                </Modal>
             </View>
         );
     }
