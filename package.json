@@ -34,7 +34,7 @@
     "prop-types": "^15.6.1",
     "react": "16.0.0",
     "react-autobind": "^1.0.6",
-    "react-native": "0.50.0",
+    "react-native": "0.70.6",
     "react-native-auto-height-image": "^1.0.0",
     "react-native-exception-handler": "^2.6.0",
     "react-native-fetch-polyfill": "^1.1.2",
